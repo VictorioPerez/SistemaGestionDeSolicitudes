@@ -11,7 +11,7 @@ public class Solicitudes {
     private Estudiante estudiante;
     private Responsable responsable;
 
-    public Solicitud(
+    public Solicitudes(
             int id,
             String descripcion,
             String tipo,
