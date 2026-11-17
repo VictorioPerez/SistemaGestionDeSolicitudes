@@ -15,8 +15,13 @@ public class SolicitudService {
         this.repository = repository;
     }
 
-    public Solicitudes registrarSolicitud(
-            DatosSolicitud datos, Estudiante estudiante) {
+    public Solicitudes registrarSolicitud(DatosSolicitud datos) {
+
+        Estudiante estudiante = new Estudiante(
+                datos.getIdEstudiante(),
+                datos.getNombreEstudiante(),
+                datos.getEmail()
+        );
 
         Solicitudes solicitud = new Solicitudes(
                 siguienteId++,

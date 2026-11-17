@@ -81,25 +81,30 @@ public class MenuConsola {
         try {
             System.out.println("Tipos: CERTIFICADO, EQUIVALENCIA, INSCRIPCION, RECLAMO");
             System.out.print("Tipo de solicitud: ");
+
             TipoSolicitud tipo = TipoSolicitud.valueOf(
                     scanner.nextLine().trim().toUpperCase()
             );
 
             System.out.println("Prioridades: BAJA, MEDIA, ALTA");
             System.out.print("Prioridad: ");
+
             Prioridad prioridad = Prioridad.valueOf(
                     scanner.nextLine().trim().toUpperCase()
             );
 
+            // Agrupar los datos en un único objeto
             DatosSolicitud datos = new DatosSolicitud(
-                    nombre, email, descripcion, tipo, prioridad
+                    idEstudiante,
+                    nombre,
+                    email,
+                    descripcion,
+                    tipo,
+                    prioridad
             );
 
-            Estudiante estudiante = new Estudiante(
-                    idEstudiante, nombre, email
-            );
-
-            servicio.registrarSolicitud(datos, estudiante);
+            // Registrar la solicitud mediante el servicio
+            servicio.registrarSolicitud(datos);
 
             System.out.println("Solicitud registrada correctamente.");
 
