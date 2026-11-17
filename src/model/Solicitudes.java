@@ -4,21 +4,16 @@ public class Solicitudes {
 
     private int id;
     private String descripcion;
-    private String tipo;
-    private String prioridad;
-    private String estado;
-
+    private TipoSolicitud tipo;
+    private Prioridad prioridad;
+    private EstadoSolicitud estado;
     private Estudiante estudiante;
     private Responsable responsable;
 
-    public Solicitudes(
-            int id,
-            String descripcion,
-            String tipo,
-            String prioridad,
-            String estado,
-            Estudiante estudiante
-    ) {
+    public Solicitudes(int id, String descripcion,
+                       TipoSolicitud tipo, Prioridad prioridad,
+                       EstadoSolicitud estado, Estudiante estudiante) {
+
         this.id = id;
         this.descripcion = descripcion;
         this.tipo = tipo;
@@ -36,15 +31,15 @@ public class Solicitudes {
         return descripcion;
     }
 
-    public String getTipo() {
+    public TipoSolicitud getTipo() {
         return tipo;
     }
 
-    public String getPrioridad() {
+    public Prioridad getPrioridad() {
         return prioridad;
     }
 
-    public String getEstado() {
+    public EstadoSolicitud getEstado() {
         return estado;
     }
 
@@ -56,7 +51,7 @@ public class Solicitudes {
         return responsable;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(EstadoSolicitud estado) {
         this.estado = estado;
     }
 
